@@ -121,7 +121,7 @@
             // RefreshTimer
             // 
             this.RefreshTimer.Enabled = true;
-            this.RefreshTimer.Interval = 490;
+            this.RefreshTimer.Interval = 250;
             this.RefreshTimer.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // DecDate
@@ -181,8 +181,9 @@
             this.Controls.Add(this.Bintime);
             this.Controls.Add(this.DecTime);
             this.Controls.Add(this.ConsoleTextBox);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "ClockApp";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
