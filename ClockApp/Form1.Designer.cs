@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ConsoleTextBox = new System.Windows.Forms.RichTextBox();
             this.DecTime = new System.Windows.Forms.TextBox();
             this.Bintime = new System.Windows.Forms.TextBox();
@@ -155,9 +154,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.HexDate);
             this.Controls.Add(this.OctDate);
@@ -172,7 +168,6 @@
             this.Controls.Add(this.Bintime);
             this.Controls.Add(this.DecTime);
             this.Controls.Add(this.ConsoleTextBox);
-            this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
