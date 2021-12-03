@@ -13,24 +13,46 @@ namespace ClockApp
 {
     public partial class Form1 : Form
     {
+        public int counter = 0;
         public Form1()
         {
             InitializeComponent();
-            var datetimenow = DateTime.Now.ToString();
-            DecTime.Text = datetimenow;
-            Bintime.Text = datetimenow;
-            OctTime.Text = datetimenow;
-            HexTime.Text = datetimenow;
-            ConsoleTextBox.Text = "hello world";
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
             updateDec();
             updateBin();
             updateOct();
             updateHex();
-            ConsoleTextBox.AppendText(Environment.NewLine + "> Updating clock");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (counter == 0) {
+                ConsoleTextBox.Text = "> Updating dec clock";
+                updateDec();
+                counter = 1;
+            }
+            else if (counter == 1)
+            {
+                ConsoleTextBox.AppendText(Environment.NewLine + "> Updating bin clock");
+                updateBin();
+                counter = 2;
+            }
+            else if (counter == 2)
+            {
+                ConsoleTextBox.AppendText(Environment.NewLine + "> Updating oct clock");
+                updateOct();
+                counter = 3;
+            }
+            else if (counter == 3)
+            {
+                ConsoleTextBox.AppendText(Environment.NewLine + "> Updating hex clock");
+                updateHex();
+                counter = 4;
+            }
+            else if (counter == 4)
+            {
+                ConsoleTextBox.Text = "";
+                counter = 0;
+            }
         }
 
         public void updateDec() {
