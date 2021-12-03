@@ -43,13 +43,14 @@
             this.BinDate = new System.Windows.Forms.TextBox();
             this.OctDate = new System.Windows.Forms.TextBox();
             this.HexDate = new System.Windows.Forms.TextBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // ConsoleTextBox
             // 
-            this.ConsoleTextBox.Location = new System.Drawing.Point(485, 217);
+            this.ConsoleTextBox.Location = new System.Drawing.Point(485, 244);
             this.ConsoleTextBox.Name = "ConsoleTextBox";
-            this.ConsoleTextBox.Size = new System.Drawing.Size(303, 221);
+            this.ConsoleTextBox.Size = new System.Drawing.Size(303, 144);
             this.ConsoleTextBox.TabIndex = 0;
             this.ConsoleTextBox.Text = "";
             // 
@@ -120,7 +121,7 @@
             // RefreshTimer
             // 
             this.RefreshTimer.Enabled = true;
-            this.RefreshTimer.Interval = 250;
+            this.RefreshTimer.Interval = 490;
             this.RefreshTimer.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // DecDate
@@ -151,11 +152,22 @@
             this.HexDate.Size = new System.Drawing.Size(335, 23);
             this.HexDate.TabIndex = 12;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(8, 362);
+            this.progressBar1.MarqueeAnimationSpeed = 300;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(361, 23);
+            this.progressBar1.Step = 20;
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.HexDate);
             this.Controls.Add(this.OctDate);
             this.Controls.Add(this.BinDate);
@@ -171,6 +183,7 @@
             this.Controls.Add(this.ConsoleTextBox);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +205,6 @@
         private System.Windows.Forms.TextBox BinDate;
         private System.Windows.Forms.TextBox OctDate;
         private System.Windows.Forms.TextBox HexDate;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

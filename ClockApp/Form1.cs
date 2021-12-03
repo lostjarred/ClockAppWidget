@@ -29,29 +29,34 @@ namespace ClockApp
                 ConsoleTextBox.Text = "> Updating dec clock";
                 updateDec();
                 counter = 1;
+                progressBar1.Value = 25;
             }
             else if (counter == 1)
             {
                 ConsoleTextBox.AppendText(Environment.NewLine + "> Updating bin clock");
                 updateBin();
                 counter = 2;
+                progressBar1.Value = 50;
             }
             else if (counter == 2)
             {
                 ConsoleTextBox.AppendText(Environment.NewLine + "> Updating oct clock");
                 updateOct();
                 counter = 3;
+                progressBar1.Value = 75;
             }
             else if (counter == 3)
             {
                 ConsoleTextBox.AppendText(Environment.NewLine + "> Updating hex clock");
                 updateHex();
                 counter = 4;
+                progressBar1.Value = 100;
             }
             else if (counter == 4)
             {
                 ConsoleTextBox.Text = "";
                 counter = 0;
+                progressBar1.Value = 0;
             }
         }
 
@@ -70,6 +75,11 @@ namespace ClockApp
         public void updateHex() {
             HexTime.Text = DateTimeUtils.getHourhex() + ":" + DateTimeUtils.getMinutehex() + ":" + DateTimeUtils.getSecondhex();
             HexDate.Text = DateTimeUtils.getDayhex() + "/" + DateTimeUtils.getMonthhex() + "/" + DateTimeUtils.getYearhex();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
